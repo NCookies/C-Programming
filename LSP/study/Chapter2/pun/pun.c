@@ -1,3 +1,10 @@
+/*
+ * Name: pun.c
+ * Date: 2017-06-14
+ * Purpose: Prints a bad pun
+ * Author: NCookie
+ */
+
 #include <stdio.h>
 
 int main(void)
