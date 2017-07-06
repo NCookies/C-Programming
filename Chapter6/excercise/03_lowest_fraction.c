@@ -1,10 +1,9 @@
 /*                                                                                     
 * ====================================================================================
 *                                                                                     
-*       Filename:  02_gcd.c
+*       Filename:  03_lowest_fraction.c
 *                                                                                     
-*    Description:  Calculates and displays their greatest common divisor (GCD) 
-                   using two integers user entered
+*    Description:  Reduces the fraction user entered to lowest 
 *                                                                                     
 *        Version:  1.0                                                                
 *        Created:  2017. 07. 05. (수) 22:27:15 KST
@@ -21,16 +20,15 @@
 
 int main(void)
 {
+    int num, denom;
     int n, m;
     int remain;
 
-    printf("Enter two integers: ");
-    scanf("%d%d", &n, &m);
+    printf("Enter a fraction: ");
+    scanf("%d/%d", &num, &denom);
 
-    // 동작은 하나 가독성이 별로인 듯
-    // for ( ; n != 0; m = n, n = remain) {
-    //     remain = m % n;
-    // }
+    n = num;
+    m = denom;
 
     while (n != 0) {
         remain = m % n;
@@ -38,7 +36,5 @@ int main(void)
         n = remain;
     }
 
-    printf("Greatest common divisor: %d\n", m);
-
-    return 0;
+    printf("In owest terms: %d/%d\n", num / m, denom / m);
 }
