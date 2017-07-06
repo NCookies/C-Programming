@@ -13,7 +13,11 @@ int main(void)
     printf("%d / %d = %d\n", -9, 7, -9 / 7);
     printf("%d %% %d = %d\n", -9, 7, -9 % 7);
 
-    printf("%d\n", +-3);    // calculate from right to left
+    printf("%d\n", +-3);    /* calculate from right to left */
+
+    printf("%d\n", 5 % (-3));
+    printf("%d\n", (-5) % (3));
+    printf("%d\n", (-5) % (-3));
     /*
      * C89
      * -9 / 7 = -1
