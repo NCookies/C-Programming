@@ -1,12 +1,12 @@
 /*                                                                                     
 * ====================================================================================
 *                                                                                     
-*       Filename:  03_lowest_fraction.c
+*       Filename:  04_broker.c
 *                                                                                     
-*    Description:  Reduces the fraction user entered to lowest 
+*    Description:  Improve broker.c using loop
 *                                                                                     
 *        Version:  1.0                                                                
-*        Created:  2017. 07. 05. (수) 22:50:20 KST
+*        Created:  2017. 07. 05. (수) 23:01:38 KST
 *       Revision:  none
 *       Compiler:  gcc
 *                                                                                     
@@ -20,21 +20,32 @@
 
 int main(void)
 {
-    int num, denom;
-    int n, m;
-    int remain;
+    float stock;
+    float commission;
 
-    printf("Enter a fraction: ");
-    scanf("%d/%d", &num, &denom);
+    while (1) {
+        printf("Enter value of trade: ");
+        scanf("%f", &stock);
 
-    n = num;
-    m = denom;
+        if (stock == 0) 
+            break;
 
-    while (n != 0) {
-        remain = m % n;
-        m = n;
-        n = remain;
+        if (stock < 2500) {
+            commission = 30.00f + stock * 0.017f;
+        } else if (stock < 6250.00f) {
+            commission = 56.00f + stock * 0.0066f;
+        } else if (stock < 20000.00f) {
+            commission = 76.00f + stock * 0.0034f;
+        } else if (stock < 50000.00f) {
+            commission = 100.00f + stock * 0.0022f;
+        } else if (stock < 500000.00f) {
+            commission = 155.00f + stock * 0.0011f;
+        } else {
+            commission = 255.00f + stock * 0.0009f;
+        }
+
+        printf("Commission: $%.2f\n\n", commission);
     }
 
-    printf("In owest terms: %d/%d\n", num / m, denom / m);
+    return 0;
 }
